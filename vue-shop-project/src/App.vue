@@ -8,7 +8,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5"></div>
+      <div class="col-md-5 my-5">
+        <cart v-on:remove-from-cart="removeFromCart($event)" :items="cart"></cart>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +23,8 @@ import Product from '@/components/Product.vue';
 export default {
   name: 'App',
   components: {
-    Product
+    Product,
+    Cart
   },
   data() {
     return {
@@ -41,6 +44,9 @@ export default {
       }
 
       return false
+    },
+    removeFromCart(product) {
+      this.cart = this.cart.filter(item => item.id !== product.id)
     }
   }
 }
