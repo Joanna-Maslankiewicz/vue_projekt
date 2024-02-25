@@ -9,7 +9,7 @@
         </ul>
 
         <div class="card p-3 my-5">
-            <h4 class="text-center">PLN {{ total }}</h4>
+            <h4 class="text-center">PLN {{ formattedTotal }}</h4>
         </div>
 
         <button :disabled="items.length === 0" @click="$emit('pay')" class="btn btn-info form-control">Pay Now</button>
@@ -22,6 +22,9 @@
         computed: {
             total() {
                 return this.items.reduce((acc, item) => acc + Number(item.price), 0)
+            },
+            formattedTotal() {
+                return this.total.toFixed(2)
             }
         }
     }
