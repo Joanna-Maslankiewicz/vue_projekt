@@ -4,12 +4,12 @@
       <div class="col-md-7">
         <div class="row">
           <div :key="product.id" class="col-md-6" v-for="product in products">
-            <product :isInCart="isInCart(product)" v-on:add-to-cart="addToCart(product)" :product="product"></product>
+            <product :isInCart="isInCart(product)" @add-to-cart="addToCart" :product="product"></product>
           </div>
         </div>
       </div>
       <div class="col-md-5 my-5">
-        <cart v-on:pay="pay()" v-on:remove-from-cart="removeFromCart($event)" :items="cart"></cart>
+        <cart v-on:pay="pay()" v-on:remove-from-cart="removeFromCart($event)" :cartItems="cartItems"></cart>
       </div>
     </div>
   </div>
@@ -29,24 +29,29 @@ export default {
   data() {
     return {
       products,
-      cart: []
+      cartItems: []
     }
   },
   methods: {
-    addToCart(product) {
-      this.cart.push(product)
+    addToCart({ product, quantity }) {
+      const existingItemIndex = this.cartItems.findIndex((cartItem) => cartItem.product.id === product.id);
+
+      if (existingItemIndex !== -1) {
+        this.cartItems[existingItemIndex].quantity += quantity;
+      } else {
+        this.cartItems.push({ product, quantity });
+      }
     },
     isInCart(product) {
-      const item = this.cart.find(item => item.id === product.id)
-
-      if(item) {
-        return true
-      }
-
-      return false
+      return this.cartItems.some((cartItem) => cartItem.product.id === product.id)
     },
     removeFromCart(product) {
-      this.cart = this.cart.filter(item => item.id !== product.id)
+      // Usuń produkt z koszyka
+      const index = this.cartItems.findIndex((cartItem) => cartItem.product.id === product.id);
+
+      if (index !== -1) {
+        this.cartItems.splice(index, 1);
+      }
     },
     pay() {
       this.cart = []

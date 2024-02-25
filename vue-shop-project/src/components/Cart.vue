@@ -2,9 +2,9 @@
 <template>
     <div>
         <ul class="list-group">
-            <li class="list-group-item" v-for="item in items" :key="item.id">
-                {{ item.title }} - PLN {{ item.price }}
-                <button @click="$emit('remove-from-cart', item)" class="btn badge badge-danger float-right">Remove from cart</button>
+            <li class="list-group-item" v-for="cartItem in cartItems" :key="cartItem.product.id">
+                {{ cartItem.product.title }} - PLN {{ cartItem.product.price }} * {{ cartItem.quantity }}
+                <button @click="$emit('remove-from-cart', cartItem.product)" class="btn badge badge-danger float-right">Remove from cart</button>
             </li>
         </ul>
 
@@ -12,16 +12,16 @@
             <h4 class="text-center">PLN {{ formattedTotal }}</h4>
         </div>
 
-        <button :disabled="items.length === 0" @click="$emit('pay')" class="btn btn-info form-control">Pay Now</button>
+        <button :disabled="cartItems.length === 0" @click="$emit('pay')" class="btn btn-info form-control">Pay Now</button>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['items'],
+        props: ['cartItems'],
         computed: {
             total() {
-                return this.items.reduce((acc, item) => acc + Number(item.price), 0)
+                return this.cartItems.reduce((acc, cartItem) => acc + cartItem.product.price * cartItem.quantity, 0)
             },
             formattedTotal() {
                 return this.total.toFixed(2)
