@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Baldur's Gate 3",
+        "image": "https://image.api.playstation.com/vulcan/ap/rnd/202302/2321/3098481c9164bb5f33069b37e49fba1a572ea3b89971ee7b.jpg ",
+        "price": "249.99"
+    },
+    {
+        "id": 2,
+        "title": "Makaron Spaghettti la Molisana",
+        "image": "https://image.ceneostatic.pl/data/products/96567756/i-la-molisana-makaron-spaghetti-nr-15-500g.jpg",
+        "price": "6.99"
+    },
+    {
+        "id": 3,
+        "title": "Mleko Łaciate 3.2%",
+        "image": "https://res.cloudinary.com/dj484tw6k/image/upload/v1634597294/13747.png",
+        "price": "2.99"
+    },
+    {
+        "id": 4,
+        "title": "Długopis czarny",
+        "image": "https://print24.com.pl/pol_pl_Dlugopis-Zelowy-Rystor-GZ-031-Czarny-z-Zatyczka-22793_1.jpg",
+        "price": "0.99"
+    },
+    {
+        "id": 5,
+        "title": "Napój Lipton 1,5L",
+        "image": "https://sklep.uchowanca.pl/userdata/public/gfx/32923/Lipton---Ice-Tea-Napoj-niegazowany-zielona-herbata---1%2C5-l.jpg",
+        "price": "6.99"
+    },
+    {
+        "id": 6,
+        "title": "Zeszyt Oxford a4",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTNNWaPCPrleWkClc3QItosM7fkNDoOvsgUw&usqp=CAU",
+        "price": "8.99"
+    },
+    {
+        "id": 7,
+        "title": "Kawa czarna",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnZ2u1aEE-L0JsWhfnHdIOlifVX12pkGSEqw&usqp=CAU",
+        "price": "19.99"
+    },
+    {
+        "id": 8,
+        "title": "Taśma klejąca",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNefWXBLRVJjxsyEK1lzQvQ-bqxPu-OTBzJirvu_I7_0Hfr0KKMlxZPS4dXlLS0qSyxOk&usqp=CAU",
+        "price": "4.99"
+    },
+    {
+        "id": 9,
+        "title": "Szklanka 0.5L",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOqKyiyUbPi_84d5eyrhKlMBorHAzYcU_3Aw&usqp=CAU",
+        "price": "10.99"
+    },
+    {
+        "id": 10,
+        "title": "Klawiatura mechanicza",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrD2823rptb5PA9f2DYgS7zIpskCexD4X3gDY62oMlGT9fBcTOXGg5A478DzG47QjNcs&usqp=CAU",
+        "price": "299.99"
+    }
+]
